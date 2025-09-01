@@ -1,0 +1,11 @@
+[build]
+target = "thumbv7em-none-eabihf"
+rustflags = ["-C", "link-args=-Tlink.x",
+             "-C", "link-arg=--verbose",
+             "-C", "link-args=-Map link.map"]
+
+[target.thumbv7em-none-eabihf]
+linker = "arm-none-eabi-ld"
+
+[env]
+RUSTC_LOG = "rustc_codegen_ssa::back::link=info"

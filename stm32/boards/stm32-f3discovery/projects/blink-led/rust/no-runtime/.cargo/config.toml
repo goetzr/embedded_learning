@@ -1,0 +1,12 @@
+[build]
+target = "thumbv7em-none-eabihf"
+
+[target.thumbv7em-none-eabihf]
+rustflags = ["--emit=asm,obj",
+             "-C", "link-arg=--verbose",
+             "-C", "link-arg=-Tlink.ld",]
+             # This became unnecessary when I made RESET_HANDLER, EXCEPTIONS, and INTERRUPTS public.
+             # Per the Rust ABI (https://doc.rust-lang.org/reference/abi.html) the compiler is
+             # forced to keep publicly reachable functions/data in the output object file.
+             #"-C", "link-dead-code=yes",]
+linker = "arm-none-eabi-ld"

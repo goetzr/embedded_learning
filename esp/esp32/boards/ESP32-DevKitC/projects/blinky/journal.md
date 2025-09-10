@@ -13,6 +13,7 @@
     - Connect GND pin on DevKitC to GND rail on breadboard
     - Determine GPIO pin to connect LED to
     - Put LED and resistor in series on breadboard
+
 ### 7 Sep 2025
 - Working issue #3: Assemble components on breadboard
 - Reading the ESP32 documentation to determine which GPIO pin to connect the LED to
@@ -47,3 +48,40 @@
 - Given the shared I/O pin functions and the pins that are not I/O pins, the pins not exposed on the ESP32-DevKitC board are:
     - GPIO0
     - GPIO36 - GPIO39
+
+### 9 Sep 2025
+- Working issue #3: Assemble components on breadboard
+- Working on a pin mappings table
+
+| ESP32-DevKitC | ESP32-WROOM-32 | ESP32 Pin Name | ESP32 Function 0 |
+|:-------------:|:--------------:|:--------------:|:----------------:|
+| VIN           | N/A            | N/A            | N/A              |
+| EN            | N/A            |
+| 3V3           | 3V3            |
+| GND           | GND            |
+| RX0           | RXD0           |
+| RX2           | IO16           |
+| TX2           | IO17           |
+| VN            | SENSOR_VN      |
+| VP            | SENSOR_VP      |
+| NC            | IO0            |
+| TX0           | TXD0           | U0TXD          | GPIO0
+| D2            | IO2            |
+| D4            | IO4            |
+| D5            | IO5            |
+| D12           | IO12           |
+| D13           | IO13           |
+| D14           | IO14           |
+| D15           | IO15           |
+| D18           | IO18           |
+| D19           | IO19           |
+| D21           | IO21           |
+| D22           | IO22           |
+| D23           | IO23           |
+| D25           | IO25           |
+| D26           | IO26           |
+| D27           | IO27           |
+| D32           | IO32           |
+| D33           | IO33           |
+| D34           | IO34           |
+| D35           | IO35           |

@@ -53,35 +53,47 @@
 - Working issue #3: Assemble components on breadboard
 - Working on a pin mappings table
 
+#### I/O Pin Mapping
+
+**NOTE:** GPIO20 and GPIO24 don't exist.
+
 | ESP32-DevKitC | ESP32-WROOM-32 | ESP32 Pin Name | ESP32 Function 0 |
 |:-------------:|:--------------:|:--------------:|:----------------:|
-| VIN           | N/A            | N/A            | N/A              |
-| EN            | N/A            |
-| 3V3           | 3V3            |
-| GND           | GND            |
-| RX0           | RXD0           |
-| RX2           | IO16           |
-| TX2           | IO17           |
-| VN            | SENSOR_VN      |
-| VP            | SENSOR_VP      |
-| NC            | IO0            |
-| TX0           | TXD0           | U0TXD          | GPIO0
-| D2            | IO2            |
-| D4            | IO4            |
-| D5            | IO5            |
-| D12           | IO12           |
-| D13           | IO13           |
-| D14           | IO14           |
-| D15           | IO15           |
-| D18           | IO18           |
-| D19           | IO19           |
-| D21           | IO21           |
-| D22           | IO22           |
-| D23           | IO23           |
-| D25           | IO25           |
-| D26           | IO26           |
-| D27           | IO27           |
-| D32           | IO32           |
-| D33           | IO33           |
-| D34           | IO34           |
-| D35           | IO35           |
+| NC            | IO0            | GPIO0          | GPIO0            |
+| TX0           | TXD0           | U0TXD          | GPIO1            |
+| D2            | IO2            | GPIO2          | GPIO2            |
+| RX0           | RXD0           | U0RXD          | GPIO3            |
+| D4            | IO4            | GPIO4          | GPIO4            |
+| D5            | IO5            | GPIO5          | GPIO5            |
+| NC            | CLK            | SD_CLK         | GPIO6            |
+| NC            | SD0            | SD_DATA_0      | GPIO7            |
+| NC            | SD1            | SD_DATA_1      | GPIO8            |
+| NC            | SD2            | SD_DATA_2      | GPIO9            |
+| NC            | SD3            | SD_DATA_3      | GPIO10           |
+| NC            | CMD            | SD_CMD         | GPIO11           |
+| D12           | IO12           | MTDI           | GPIO12           |
+| D13           | IO13           | MTCK           | GPIO13           |
+| D14           | IO14           | MTMS           | GPIO14           |
+| D15           | IO15           | MTD0           | GPIO15           |
+| RX2           | IO16           | GPIO16         | GPIO16           |
+| TX2           | IO17           | GPIO17         | GPIO17           |
+| D18           | IO18           | GPIO18         | GPIO18           |
+| D19           | IO19           | GPIO19         | GPIO19           |
+| D21           | IO21           | GPIO21         | GPIO21           |
+| D22           | IO22           | GPIO22         | GPIO22           |
+| D23           | IO23           | GPIO23         | GPIO23           |
+| D25           | IO25           | GPIO25         | GPIO25           |
+| D26           | IO26           | GPIO26         | GPIO26           |
+| D27           | IO27           | GPIO27         | GPIO27           |
+| D32           | IO32           | 32K_XP         | GPIO32           |
+| D33           | IO33           | 32K_XN         | GPIO33           |
+| D34           | IO34           | VDET_1         | GPIO34           |
+| D35           | IO35           | VDET_2         | GPIO35           |
+| VP            | SENSOR_VP      | SENSOR_VP      | GPIO36           |
+| NC            | NC             | SENSOR_CAPP    | GPIO37           |
+| NC            | NC             | SENSOR_CAPN    | GPIO38           |
+| VN            | SENSOR_VN      | SENSOR_VN      | GPIO39           |
+
+### 10 Sep 2025
+- Working issue #3: Assemble components on breadboard
+- Filling out the I/O pin mappings table

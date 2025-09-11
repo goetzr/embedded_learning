@@ -55,44 +55,44 @@
 
 #### I/O Pin Mapping
 
-**NOTE:** GPIO20 and GPIO24 don't exist.
+**NOTE:** GPIO20, GPIO24, and GPIO28 - GPIO31 don't exist.
 
-| ESP32-DevKitC | ESP32-WROOM-32 | ESP32 Pin Name | ESP32 Function 0 |
-|:-------------:|:--------------:|:--------------:|:----------------:|
-| NC            | IO0            | GPIO0          | GPIO0            |
-| TX0           | TXD0           | U0TXD          | GPIO1            |
-| D2            | IO2            | GPIO2          | GPIO2            |
-| RX0           | RXD0           | U0RXD          | GPIO3            |
-| D4            | IO4            | GPIO4          | GPIO4            |
-| D5            | IO5            | GPIO5          | GPIO5            |
-| NC            | CLK            | SD_CLK         | GPIO6            |
-| NC            | SD0            | SD_DATA_0      | GPIO7            |
-| NC            | SD1            | SD_DATA_1      | GPIO8            |
-| NC            | SD2            | SD_DATA_2      | GPIO9            |
-| NC            | SD3            | SD_DATA_3      | GPIO10           |
-| NC            | CMD            | SD_CMD         | GPIO11           |
-| D12           | IO12           | MTDI           | GPIO12           |
-| D13           | IO13           | MTCK           | GPIO13           |
-| D14           | IO14           | MTMS           | GPIO14           |
-| D15           | IO15           | MTD0           | GPIO15           |
-| RX2           | IO16           | GPIO16         | GPIO16           |
-| TX2           | IO17           | GPIO17         | GPIO17           |
-| D18           | IO18           | GPIO18         | GPIO18           |
-| D19           | IO19           | GPIO19         | GPIO19           |
-| D21           | IO21           | GPIO21         | GPIO21           |
-| D22           | IO22           | GPIO22         | GPIO22           |
-| D23           | IO23           | GPIO23         | GPIO23           |
-| D25           | IO25           | GPIO25         | GPIO25           |
-| D26           | IO26           | GPIO26         | GPIO26           |
-| D27           | IO27           | GPIO27         | GPIO27           |
-| D32           | IO32           | 32K_XP         | GPIO32           |
-| D33           | IO33           | 32K_XN         | GPIO33           |
-| D34           | IO34           | VDET_1         | GPIO34           |
-| D35           | IO35           | VDET_2         | GPIO35           |
-| VP            | SENSOR_VP      | SENSOR_VP      | GPIO36           |
-| NC            | NC             | SENSOR_CAPP    | GPIO37           |
-| NC            | NC             | SENSOR_CAPN    | GPIO38           |
-| VN            | SENSOR_VN      | SENSOR_VN      | GPIO39           |
+| ESP32-DevKitC | ESP32-WROOM-32 | ESP32 GPIO | ESP32 Pin Name | ESP32 Function 0 |
+|:-------------:|:--------------:|:----------:|:--------------:|:----------------:|
+| NC            | IO0            | 0          | GPIO0          | GPIO0            |
+| TX0           | TXD0           | 1          | U0TXD          | U0TXD            |
+| D2            | IO2            | 2          | GPIO2          | GPIO2            |
+| RX0           | RXD0           | 3          | U0RXD          | U0RXD            |
+| D4            | IO4            | 4          | GPIO4          | GPIO4            |
+| D5            | IO5            | 5          | GPIO5          | GPIO5            |
+| NC            | CLK            | 6          | SD_CLK         | SD_CLK           |
+| NC            | SD0            | 7          | SD_DATA_0      | SD_DATA_0        |
+| NC            | SD1            | 8          | SD_DATA_1      | SD_DATA_1        |
+| NC            | SD2            | 9          | SD_DATA_2      | SD_DATA_2        |
+| NC            | SD3            | 10         | SD_DATA_3      | SD_DATA_3        |
+| NC            | CMD            | 11         | SD_CMD         | SD_CMD           |
+| D12           | IO12           | 12         | MTDI           | MTDI             |
+| D13           | IO13           | 13         | MTCK           | MTCK             |
+| D14           | IO14           | 14         | MTMS           | MTMS             |
+| D15           | IO15           | 15         | MTD0           | MTD0             |
+| RX2           | IO16           | 16         | GPIO16         | GPIO16           |
+| TX2           | IO17           | 17         | GPIO17         | GPIO17           |
+| D18           | IO18           | 18         | GPIO18         | GPIO18           |
+| D19           | IO19           | 19         | GPIO19         | GPIO19           |
+| D21           | IO21           | 21         | GPIO21         | GPIO21           |
+| D22           | IO22           | 22         | GPIO22         | GPIO22           |
+| D23           | IO23           | 23         | GPIO23         | GPIO23           |
+| D25           | IO25           | 25         | GPIO25         | GPIO25           |
+| D26           | IO26           | 26         | GPIO26         | GPIO26           |
+| D27           | IO27           | 27         | GPIO27         | GPIO27           |
+| D32           | IO32           | 32         | 32K_XP         | GPIO32           |
+| D33           | IO33           | 33         | 32K_XN         | GPIO33           |
+| D34           | IO34           | 34         | VDET_1         | GPIO34           |
+| D35           | IO35           | 35         | VDET_2         | GPIO35           |
+| VP            | SENSOR_VP      | 36         | SENSOR_VP      | GPIO36           |
+| NC            | NC             | 37         | SENSOR_CAPP    | GPIO37           |
+| NC            | NC             | 38         | SENSOR_CAPN    | GPIO38           |
+| VN            | SENSOR_VN      | 39         | SENSOR_VN      | GPIO39           |
 
 ### 10 Sep 2025
 - Working issue #3: Assemble components on breadboard

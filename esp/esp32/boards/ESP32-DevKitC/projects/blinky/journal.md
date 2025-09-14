@@ -57,26 +57,26 @@
 
 **NOTE:** GPIO20, GPIO24, and GPIO28 - GPIO31 don't exist.
 
-|     | ESP32-DevKitC | ESP32-WROOM-32 | ESP32 GPIO | ESP32 Pin Name | ESP32 Function 0 |
-|:---:|:-------------:|:--------------:|:----------:|:--------------:|:----------------:|
-| 1   | NC            | IO0            | 0          | GPIO0          | GPIO0            |
-| 2   | TX0           | TXD0           | 1          | U0TXD          | U0TXD            |
-| 3   | D2            | IO2            | 2          | GPIO2          | GPIO2            |
-| 4   | RX0           | RXD0           | 3          | U0RXD          | U0RXD            |
+|     | ESP32-DevKitC | ESP32-WROOM-32 | ESP32 GPIO | ESP32 Pin Name | ESP32 Function 0 | Notes                       |
+|:---:|:-------------:|:--------------:|:----------:|:--------------:|:----------------:|:---------------------------:|
+| 1   | NC            | IO0            | 0          | GPIO0          | GPIO0            | Strapping GPIO              |
+| 2   | TX0           | TXD0           | 1          | U0TXD          | U0TXD            | Used to flash chip          |
+| 3   | D2            | IO2            | 2          | GPIO2          | GPIO2            | Strapping GPIO              |
+| 4   | RX0           | RXD0           | 3          | U0RXD          | U0RXD            | Used to flash chip          |
 | 5   | D4            | IO4            | 4          | GPIO4          | GPIO4            |
-| 6   | D5            | IO5            | 5          | GPIO5          | GPIO5            |
-| 7   | NC            | CLK            | 6          | SD_CLK         | SD_CLK           |
-| 8   | NC            | SD0            | 7          | SD_DATA_0      | SD_DATA_0        |
-| 9   | NC            | SD1            | 8          | SD_DATA_1      | SD_DATA_1        |
-| 10  | NC            | SD2            | 9          | SD_DATA_2      | SD_DATA_2        |
-| 11  | NC            | SD3            | 10         | SD_DATA_3      | SD_DATA_3        |
-| 12  | NC            | CMD            | 11         | SD_CMD         | SD_CMD           |
-| 13  | D12           | IO12           | 12         | MTDI           | MTDI             |
-| 14  | D13           | IO13           | 13         | MTCK           | MTCK             |
-| 15  | D14           | IO14           | 14         | MTMS           | MTMS             |
-| 16  | D15           | IO15           | 15         | MTD0           | MTD0             |
-| 17  | RX2           | IO16           | 16         | GPIO16         | GPIO16           |
-| 18  | TX2           | IO17           | 17         | GPIO17         | GPIO17           |
+| 6   | D5            | IO5            | 5          | GPIO5          | GPIO5            | Strapping GPIO              |
+| 7   | NC            | CLK            | 6          | SD_CLK         | SD_CLK           | NOT recommended for use     |
+| 8   | NC            | SD0            | 7          | SD_DATA_0      | SD_DATA_0        | NOT recommended for use     |
+| 9   | NC            | SD1            | 8          | SD_DATA_1      | SD_DATA_1        | NOT recommended for use     |
+| 10  | NC            | SD2            | 9          | SD_DATA_2      | SD_DATA_2        | NOT recommended for use     |
+| 11  | NC            | SD3            | 10         | SD_DATA_3      | SD_DATA_3        | NOT recommended for use     |
+| 12  | NC            | CMD            | 11         | SD_CMD         | SD_CMD           | NOT recommended for use     |
+| 13  | D12           | IO12           | 12         | MTDI           | MTDI             | Strapping GPIO, JTAG        |
+| 14  | D13           | IO13           | 13         | MTCK           | MTCK             | JTAG                        |
+| 15  | D14           | IO14           | 14         | MTMS           | MTMS             | JTAG                        |
+| 16  | D15           | IO15           | 15         | MTD0           | MTD0             | Strapping GPIO, JTAG        |
+| 17  | RX2           | IO16           | 16         | GPIO16         | GPIO16           | NOT recommended for use     |
+| 18  | TX2           | IO17           | 17         | GPIO17         | GPIO17           | NOT recommended for use     |
 | 19  | D18           | IO18           | 18         | GPIO18         | GPIO18           |
 | 20  | D19           | IO19           | 19         | GPIO19         | GPIO19           |
 | 21  | D21           | IO21           | 21         | GPIO21         | GPIO21           |
@@ -87,12 +87,12 @@
 | 26  | D27           | IO27           | 27         | GPIO27         | GPIO27           |
 | 27  | D32           | IO32           | 32         | 32K_XP         | GPIO32           |
 | 28  | D33           | IO33           | 33         | 32K_XN         | GPIO33           |
-| 29  | D34           | IO34           | 34         | VDET_1         | GPIO34           |
-| 30  | D35           | IO35           | 35         | VDET_2         | GPIO35           |
-| 31  | VP            | SENSOR_VP      | 36         | SENSOR_VP      | GPIO36           |
-| 32  | NC            | NC             | 37         | SENSOR_CAPP    | GPIO37           |
-| 33  | NC            | NC             | 38         | SENSOR_CAPN    | GPIO38           |
-| 34  | VN            | SENSOR_VN      | 39         | SENSOR_VN      | GPIO39           |
+| 29  | D34           | IO34           | 34         | VDET_1         | GPIO34           | Input only                  |
+| 30  | D35           | IO35           | 35         | VDET_2         | GPIO35           | Input only                  |
+| 31  | VP            | SENSOR_VP      | 36         | SENSOR_VP      | GPIO36           | Input only                  |
+| 32  | NC            | NC             | 37         | SENSOR_CAPP    | GPIO37           | Input only                  |
+| 33  | NC            | NC             | 38         | SENSOR_CAPN    | GPIO38           | Input only                  |
+| 34  | VN            | SENSOR_VN      | 39         | SENSOR_VN      | GPIO39           | Input only                  |
 
 ### 10 Sep 2025
 - Working issue #3: Assemble components on breadboard
@@ -161,3 +161,67 @@
                 - Each MCU can only pull the line LOW
                 - To represent HIGH, both MCUs must stop pulling the line LOW, then
                     the pull-up resistor pulls the line up to Vcc
+### 13 Sep 2025
+- Working issue #3: Assemble components on breadboard
+- Looking more closely through the TRM to understand more about the chip
+- ESP32-DOWD is a dual-core chip
+    - PRO_CPU (protocol CPU) starts running immediately after SoC reset
+    - APP_CPU (application CPU) held in reset after SoC reset
+    - During startup, PRO_CPU does all the initialization
+    - The [Startup API Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/startup.html) has more dtails
+- Back to determining which GPIO pin to connect the LED to
+    - Pg. 114 of the TRM states that:
+        - GPIO pins 34-39 are input-only, so those pins can't be used
+        - 5 GPIO pings are strapping GPIO:
+            - Listed in table 3-1 on pg. 22 of the datasheet
+            - GPIO0, GPIO2, GPIO5, MTDI (GPIO12), MTDO (GPIO15)
+            - On power-up or reset, the ESP32’s internal reset logic reads the levels (HIGH/LOW) of strapping GPIOs.
+                    These values are latched into internal registers and used to decide:
+                - Boot mode
+                - Flash voltage
+                - Other startup options
+            - After reset strapping pins return to normal GPIO function
+            - If you connect a peripheral to a strapping pin and it pulls the line high/low at reset, you might
+                prevent the ESP32 from booting correctly
+            - Imagine old motherboards with DIP switches or jumpers you set before power-on.
+                Strapping GPIOs are the ESP32’s built-in version of that — only you don’t flip switches,
+                you wire signals.
+            - GPIO0 / GPIO2 control the boot mode:
+                - GPIO0 = 1, GPIO2 = any -> SPI boot mode (boot from flash)
+                - GPIO0 = 0, GPIO2 = 0 -> flash firmware
+            - GPIO0 isn't exposed on the ESP32-DevKitC anyway, so it can't be used
+            - Decision: Don't use any of the strapping GPIO as they may disrupt booting/flashing the chip
+    - Pg. 17 of the ESP32 datasheet states that the following GPIO are allocated for communication with
+            in-package flash/PSRAM and NOT recommended for other uses:
+        - GPIO6 - GPIO11, GPIO16, GPIO17
+        - This explains why GPIO6 - GPIO11 are not exposed by the ESP32-DevKitC
+        - Decision: Don't use GPIO16 or GPIO17
+    - Pg. 17 of the ESP32 datasheet states that the following pins are used for important functions:
+        - GPIO12 - GPIO15 are used for JTAG. However, the ESP32-DevKitC board doesn't have an on-board
+            JTAG adapter, so debugging via JTAG isn't possible out of the box.
+        - GPIO1 and GPIO3 are used to flash the chip.
+        - Decision: GPIO12 - GPIO15 are OK to use. Don't use GPIO1 or GPIO3 as it could disrupt flashing.
+    - Many of the pins in table 6.10-1 on pg. 132 of the TRM have IE=1 according to the Reset column
+- I believe the reason that the ESP32-DevKitC board doesn't expose GPIO0 is because GPIO0 is a strapping GPIO
+        that controls whether the ESP32 chip boots from flash or flashes firmware.
+    - LOW -> UART download mode (used for flashing firmware)
+    - HIGH -> Normal boot from SPI flash
+- I didn't calculate the resistor value correctly above.
+    - A green LED has a forward bias voltage Vf of ~2.1 V, meaning it will start conducting when
+        its positive terminal reaches 2.1 V
+    - The MCU provides 3.3 V, so the voltage drop across the resistor is 1.2 V
+    - If we want ~5 mA current out the GPIO pin and through the LED, we need a 2.1 / 0.005 = 420 ohm resistor
+### 14 Sep 2025
+- Working issue #3: Assemble components on breadboard
+- My diode test feature on my multimeter is unable to measure the forward voltage of an LED as it
+    doesn't provide enough voltage
+- Constructed a test circuit that lights up the LED then used my multimeter to measure the voltage across it,
+    which was 2.55 V
+- Now, given the MCU supply voltage of 3.3 V, the voltage drop across the resistor is 3.3 - 2.55 = 0.75 V
+- I want drive 5 mA through the LED, so the resistor needs to be 0.75 / 0.005 = 150 ohms
+- OK after looking into this further I am pretty sure that 2.55 V is not the forward bias of the LED
+- Tried measuring the current through the LED but my multimeter caps out at 10 mA in the 200 mA fuse port
+- Switched to the 10 A fuse port and LED lights up, current says 70 mA
+- Measuring voltage across resistor outside circuit with Fluke meter lights up the LED and reads 0.95 V.
+    Not sure what this is, it's too low to light the LED, but the LED was lit up.
+

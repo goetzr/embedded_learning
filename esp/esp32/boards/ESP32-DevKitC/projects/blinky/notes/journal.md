@@ -57,42 +57,42 @@
 
 **NOTE:** GPIO20, GPIO24, and GPIO28 - GPIO31 don't exist.
 
-|     | ESP32-DevKitC | ESP32-WROOM-32 | ESP32 GPIO | ESP32 Pin Name | ESP32 Function 0 | Notes                       |
-|:---:|:-------------:|:--------------:|:----------:|:--------------:|:----------------:|:---------------------------:|
-| 1   | NC            | IO0            | 0          | GPIO0          | GPIO0            | Strapping GPIO              |
-| 2   | TX0           | TXD0           | 1          | U0TXD          | U0TXD            | Used to flash chip          |
-| 3   | D2            | IO2            | 2          | GPIO2          | GPIO2            | Strapping GPIO              |
-| 4   | RX0           | RXD0           | 3          | U0RXD          | U0RXD            | Used to flash chip          |
-| 5   | D4            | IO4            | 4          | GPIO4          | GPIO4            |
-| 6   | D5            | IO5            | 5          | GPIO5          | GPIO5            | Strapping GPIO              |
-| 7   | NC            | CLK            | 6          | SD_CLK         | SD_CLK           | NOT recommended for use     |
-| 8   | NC            | SD0            | 7          | SD_DATA_0      | SD_DATA_0        | NOT recommended for use     |
-| 9   | NC            | SD1            | 8          | SD_DATA_1      | SD_DATA_1        | NOT recommended for use     |
-| 10  | NC            | SD2            | 9          | SD_DATA_2      | SD_DATA_2        | NOT recommended for use     |
-| 11  | NC            | SD3            | 10         | SD_DATA_3      | SD_DATA_3        | NOT recommended for use     |
-| 12  | NC            | CMD            | 11         | SD_CMD         | SD_CMD           | NOT recommended for use     |
-| 13  | D12           | IO12           | 12         | MTDI           | MTDI             | Strapping GPIO, JTAG        |
-| 14  | D13           | IO13           | 13         | MTCK           | MTCK             | JTAG                        |
-| 15  | D14           | IO14           | 14         | MTMS           | MTMS             | JTAG                        |
-| 16  | D15           | IO15           | 15         | MTD0           | MTD0             | Strapping GPIO, JTAG        |
-| 17  | RX2           | IO16           | 16         | GPIO16         | GPIO16           | NOT recommended for use     |
-| 18  | TX2           | IO17           | 17         | GPIO17         | GPIO17           | NOT recommended for use     |
-| 19  | D18           | IO18           | 18         | GPIO18         | GPIO18           |
-| 20  | D19           | IO19           | 19         | GPIO19         | GPIO19           |
-| 21  | D21           | IO21           | 21         | GPIO21         | GPIO21           |
-| 22  | D22           | IO22           | 22         | GPIO22         | GPIO22           |
-| 23  | D23           | IO23           | 23         | GPIO23         | GPIO23           |
-| 24  | D25           | IO25           | 25         | GPIO25         | GPIO25           |
-| 25  | D26           | IO26           | 26         | GPIO26         | GPIO26           |
-| 26  | D27           | IO27           | 27         | GPIO27         | GPIO27           |
-| 27  | D32           | IO32           | 32         | 32K_XP         | GPIO32           |
-| 28  | D33           | IO33           | 33         | 32K_XN         | GPIO33           |
-| 29  | D34           | IO34           | 34         | VDET_1         | GPIO34           | Input only                  |
-| 30  | D35           | IO35           | 35         | VDET_2         | GPIO35           | Input only                  |
-| 31  | VP            | SENSOR_VP      | 36         | SENSOR_VP      | GPIO36           | Input only                  |
-| 32  | NC            | NC             | 37         | SENSOR_CAPP    | GPIO37           | Input only                  |
-| 33  | NC            | NC             | 38         | SENSOR_CAPN    | GPIO38           | Input only                  |
-| 34  | VN            | SENSOR_VN      | 39         | SENSOR_VN      | GPIO39           | Input only                  |
+|     | ESP32-DevKitC | ESP32-WROOM-32 | ESP32 GPIO | ESP32 Pin Name | ESP32 Function 0 |          Notes          |
+| :-: | :-----------: | :------------: | :--------: | :------------: | :--------------: | :---------------------: |
+|  1  |      NC       |      IO0       |     0      |     GPIO0      |      GPIO0       |     Strapping GPIO      |
+|  2  |      TX0      |      TXD0      |     1      |     U0TXD      |      U0TXD       |   Used to flash chip    |
+|  3  |      D2       |      IO2       |     2      |     GPIO2      |      GPIO2       |     Strapping GPIO      |
+|  4  |      RX0      |      RXD0      |     3      |     U0RXD      |      U0RXD       |   Used to flash chip    |
+|  5  |      D4       |      IO4       |     4      |     GPIO4      |      GPIO4       |                         |
+|  6  |      D5       |      IO5       |     5      |     GPIO5      |      GPIO5       |     Strapping GPIO      |
+|  7  |      NC       |      CLK       |     6      |     SD_CLK     |      SD_CLK      | NOT recommended for use |
+|  8  |      NC       |      SD0       |     7      |   SD_DATA_0    |    SD_DATA_0     | NOT recommended for use |
+|  9  |      NC       |      SD1       |     8      |   SD_DATA_1    |    SD_DATA_1     | NOT recommended for use |
+| 10  |      NC       |      SD2       |     9      |   SD_DATA_2    |    SD_DATA_2     | NOT recommended for use |
+| 11  |      NC       |      SD3       |     10     |   SD_DATA_3    |    SD_DATA_3     | NOT recommended for use |
+| 12  |      NC       |      CMD       |     11     |     SD_CMD     |      SD_CMD      | NOT recommended for use |
+| 13  |      D12      |      IO12      |     12     |      MTDI      |       MTDI       |  Strapping GPIO, JTAG   |
+| 14  |      D13      |      IO13      |     13     |      MTCK      |       MTCK       |          JTAG           |
+| 15  |      D14      |      IO14      |     14     |      MTMS      |       MTMS       |          JTAG           |
+| 16  |      D15      |      IO15      |     15     |      MTD0      |       MTD0       |  Strapping GPIO, JTAG   |
+| 17  |      RX2      |      IO16      |     16     |     GPIO16     |      GPIO16      | NOT recommended for use |
+| 18  |      TX2      |      IO17      |     17     |     GPIO17     |      GPIO17      | NOT recommended for use |
+| 19  |      D18      |      IO18      |     18     |     GPIO18     |      GPIO18      |                         |
+| 20  |      D19      |      IO19      |     19     |     GPIO19     |      GPIO19      |                         |
+| 21  |      D21      |      IO21      |     21     |     GPIO21     |      GPIO21      |                         |
+| 22  |      D22      |      IO22      |     22     |     GPIO22     |      GPIO22      |                         |
+| 23  |      D23      |      IO23      |     23     |     GPIO23     |      GPIO23      |                         |
+| 24  |      D25      |      IO25      |     25     |     GPIO25     |      GPIO25      |                         |
+| 25  |      D26      |      IO26      |     26     |     GPIO26     |      GPIO26      |                         |
+| 26  |      D27      |      IO27      |     27     |     GPIO27     |      GPIO27      |                         |
+| 27  |      D32      |      IO32      |     32     |     32K_XP     |      GPIO32      |                         |
+| 28  |      D33      |      IO33      |     33     |     32K_XN     |      GPIO33      |                         |
+| 29  |      D34      |      IO34      |     34     |     VDET_1     |      GPIO34      |       Input only        |
+| 30  |      D35      |      IO35      |     35     |     VDET_2     |      GPIO35      |       Input only        |
+| 31  |      VP       |   SENSOR_VP    |     36     |   SENSOR_VP    |      GPIO36      |       Input only        |
+| 32  |      NC       |       NC       |     37     |  SENSOR_CAPP   |      GPIO37      |       Input only        |
+| 33  |      NC       |       NC       |     38     |  SENSOR_CAPN   |      GPIO38      |       Input only        |
+| 34  |      VN       |   SENSOR_VN    |     39     |   SENSOR_VN    |      GPIO39      |       Input only        |
 
 ### 10 Sep 2025
 - Working issue #3: Assemble components on breadboard
@@ -103,7 +103,7 @@
 - Determining which GPIO pin to connect LED to
 - Explain pull up / pull down resistors
     - Pull up / pull down resistors only apply to input pins
-    - If nothing is connected to an input pin, the pin is essentially floating, termined high impedance (Hi-Z)
+    - If nothing is connected to an input pin, the pin is essentially floating, termed high impedance (Hi-Z)
     - A floating pin can randomly read as HIGH or LOW depending on noise, leakage,
         or even your finger touching the board
     - Pull up / pull down resistors give the input pin a well-defined default state
@@ -118,7 +118,7 @@
         - Input pin reads LOW when nothing is connected to it
         - Example: Push button connected to Vcc on one side and the input pin on the other side.
             - When the button is released (default state), pin is pulled down (LOW)
-            - When the button is pressed, pin is driven HIGH
+            - When the button is pressed, pin is driven to Vcc (HIGH)
     - "Weak" internal pull up / pull down resistors
         - Have high resistance (10s of kiloohms)
         - Only source/sink a very small amount of current when the pin is forced to the opposite level
@@ -207,10 +207,10 @@
     - LOW -> UART download mode (used for flashing firmware)
     - HIGH -> Normal boot from SPI flash
 - I didn't calculate the resistor value correctly above.
-    - A green LED has a forward bias voltage Vf of ~2.1 V, meaning it will start conducting when
-        its positive terminal reaches 2.1 V
-    - The MCU provides 3.3 V, so the voltage drop across the resistor is 1.2 V
-    - If we want ~5 mA current out the GPIO pin and through the LED, we need a 2.1 / 0.005 = 420 ohm resistor
+    - A green LED has a forward bias voltage Vf of ~2.2 V, meaning it will start conducting when
+        its positive terminal reaches 2.2 V
+    - The MCU provides 3.3 V, so the voltage drop across the resistor is 1.1 V
+    - If we want 5 mA current out the GPIO pin and through the LED, we need a 1.1 / 0.005 = 220 ohm resistor
 ### 14 Sep 2025
 - Working issue #3: Assemble components on breadboard
 - My diode test feature on my multimeter is unable to measure the forward voltage of an LED as it
@@ -224,4 +224,14 @@
 - Switched to the 10 A fuse port and LED lights up, current says 70 mA
 - Measuring voltage across resistor outside circuit with Fluke meter lights up the LED and reads 0.95 V.
     Not sure what this is, it's too low to light the LED, but the LED was lit up.
+### 21Sep 2025
+- My multimeter must be used with the 10 A fuse port to read current
+	- The 200 mA port doesn't seem to to work
+	- The fluke multimeter can't measure sub 1 A currents
+- Completed test circuit
+- Tried red, green, and blue LEDs. Verified the following forward voltages:
+	- Red: 1.8 V
+	- Green: 2.2 V
+	- Blue 3 V
+- I didn't try yellow, but it's between red and green so I'll assume 2.0 V
 

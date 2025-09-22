@@ -2,5 +2,7 @@
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
   "attachmentFolderPath": "./attachments",
-  "readableLineLength": false
+  "readableLineLength": false,
+  "vimMode": false,
+  "showLineNumber": true
 }

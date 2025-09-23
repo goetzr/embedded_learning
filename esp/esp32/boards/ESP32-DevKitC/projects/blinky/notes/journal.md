@@ -57,42 +57,42 @@
 
 **NOTE:** GPIO20, GPIO24, and GPIO28 - GPIO31 don't exist.
 
-|     | ESP32-DevKitC | ESP32-WROOM-32 | ESP32 GPIO | ESP32 Pin Name | ESP32 Function 0 |          Notes          |
-| :-: | :-----------: | :------------: | :--------: | :------------: | :--------------: | :---------------------: |
-|  1  |      NC       |      IO0       |     0      |     GPIO0      |      GPIO0       |     Strapping GPIO      |
-|  2  |      TX0      |      TXD0      |     1      |     U0TXD      |      U0TXD       |   Used to flash chip    |
-|  3  |      D2       |      IO2       |     2      |     GPIO2      |      GPIO2       |     Strapping GPIO      |
-|  4  |      RX0      |      RXD0      |     3      |     U0RXD      |      U0RXD       |   Used to flash chip    |
-|  5  |      D4       |      IO4       |     4      |     GPIO4      |      GPIO4       |                         |
-|  6  |      D5       |      IO5       |     5      |     GPIO5      |      GPIO5       |     Strapping GPIO      |
-|  7  |      NC       |      CLK       |     6      |     SD_CLK     |      SD_CLK      | NOT recommended for use |
-|  8  |      NC       |      SD0       |     7      |   SD_DATA_0    |    SD_DATA_0     | NOT recommended for use |
-|  9  |      NC       |      SD1       |     8      |   SD_DATA_1    |    SD_DATA_1     | NOT recommended for use |
-| 10  |      NC       |      SD2       |     9      |   SD_DATA_2    |    SD_DATA_2     | NOT recommended for use |
-| 11  |      NC       |      SD3       |     10     |   SD_DATA_3    |    SD_DATA_3     | NOT recommended for use |
-| 12  |      NC       |      CMD       |     11     |     SD_CMD     |      SD_CMD      | NOT recommended for use |
-| 13  |      D12      |      IO12      |     12     |      MTDI      |       MTDI       |  Strapping GPIO, JTAG   |
-| 14  |      D13      |      IO13      |     13     |      MTCK      |       MTCK       |          JTAG           |
-| 15  |      D14      |      IO14      |     14     |      MTMS      |       MTMS       |          JTAG           |
-| 16  |      D15      |      IO15      |     15     |      MTD0      |       MTD0       |  Strapping GPIO, JTAG   |
-| 17  |      RX2      |      IO16      |     16     |     GPIO16     |      GPIO16      | NOT recommended for use |
-| 18  |      TX2      |      IO17      |     17     |     GPIO17     |      GPIO17      | NOT recommended for use |
-| 19  |      D18      |      IO18      |     18     |     GPIO18     |      GPIO18      |                         |
-| 20  |      D19      |      IO19      |     19     |     GPIO19     |      GPIO19      |                         |
-| 21  |      D21      |      IO21      |     21     |     GPIO21     |      GPIO21      |                         |
-| 22  |      D22      |      IO22      |     22     |     GPIO22     |      GPIO22      |                         |
-| 23  |      D23      |      IO23      |     23     |     GPIO23     |      GPIO23      |                         |
-| 24  |      D25      |      IO25      |     25     |     GPIO25     |      GPIO25      |                         |
-| 25  |      D26      |      IO26      |     26     |     GPIO26     |      GPIO26      |                         |
-| 26  |      D27      |      IO27      |     27     |     GPIO27     |      GPIO27      |                         |
-| 27  |      D32      |      IO32      |     32     |     32K_XP     |      GPIO32      |                         |
-| 28  |      D33      |      IO33      |     33     |     32K_XN     |      GPIO33      |                         |
-| 29  |      D34      |      IO34      |     34     |     VDET_1     |      GPIO34      |       Input only        |
-| 30  |      D35      |      IO35      |     35     |     VDET_2     |      GPIO35      |       Input only        |
-| 31  |      VP       |   SENSOR_VP    |     36     |   SENSOR_VP    |      GPIO36      |       Input only        |
-| 32  |      NC       |       NC       |     37     |  SENSOR_CAPP   |      GPIO37      |       Input only        |
-| 33  |      NC       |       NC       |     38     |  SENSOR_CAPN   |      GPIO38      |       Input only        |
-| 34  |      VN       |   SENSOR_VN    |     39     |   SENSOR_VN    |      GPIO39      |       Input only        |
+|     | ESP32-DevKitC | ESP32-WROOM-32 | ESP32 GPIO | ESP32 Pin Name | ESP32 Function 0 |                                                                   Notes                                                                   |
+| :-: | :-----------: | :------------: | :--------: | :------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+|  1  |      NC       |      IO0       |     0      |     GPIO0      |      GPIO0       |                                    Strapping GPIO (boot mode)<br>Capacitive-sensing<br>Analog-enabled                                     |
+|  2  |      TX0      |      TXD0      |     1      |     U0TXD      |      U0TXD       |                                                            Used to flash chip                                                             |
+|  3  |      D2       |      IO2       |     2      |     GPIO2      |      GPIO2       |                                    Strapping GPIO (boot mode)<br>Capacitive-sensing<br>Analog-enabled                                     |
+|  4  |      RX0      |      RXD0      |     3      |     U0RXD      |      U0RXD       |                                                            Used to flash chip                                                             |
+|  5  |      D4       |      IO4       |     4      |     GPIO4      |      GPIO4       |                                                   Capacitive-sensing<br>Analog-enabled                                                    |
+|  6  |      D5       |      IO5       |     5      |     GPIO5      |      GPIO5       |                                                    Strapping GPIO (SDIO slave timing)                                                     |
+|  7  |      NC       |      CLK       |     6      |     SD_CLK     |      SD_CLK      |                                           Connected to SPI flash integrated on WROOM-32 module                                            |
+|  8  |      NC       |      SD0       |     7      |   SD_DATA_0    |    SD_DATA_0     |                                           Connected to SPI flash integrated on WROOM-32 module                                            |
+|  9  |      NC       |      SD1       |     8      |   SD_DATA_1    |    SD_DATA_1     |                                           Connected to SPI flash integrated on WROOM-32 module                                            |
+| 10  |      NC       |      SD2       |     9      |   SD_DATA_2    |    SD_DATA_2     |                                           Connected to SPI flash integrated on WROOM-32 module                                            |
+| 11  |      NC       |      SD3       |     10     |   SD_DATA_3    |    SD_DATA_3     |                                           Connected to SPI flash integrated on WROOM-32 module                                            |
+| 12  |      NC       |      CMD       |     11     |     SD_CMD     |      SD_CMD      |                                           Connected to SPI flash integrated on WROOM-32 module                                            |
+| 13  |      D12      |      IO12      |     12     |      MTDI      |       MTDI       |        Strapping GPIO (internal LDO voltage)<br>JTAG<br>Capacitive-sensing<br>Analog-enabled<br>**NOTE:** No built-in JTAG module         |
+| 14  |      D13      |      IO13      |     13     |      MTCK      |       MTCK       |  JTAG<br>Capacitive-sensing<br>Analog-enabled<br>**NOTE:** No built-in JTAG module<br>**OK to use** if not used by external JTAG module   |
+| 15  |      D14      |      IO14      |     14     |      MTMS      |       MTMS       |  JTAG<br>Capacitive-sensing<br>Analog-enabled<br>**NOTE:** No built-in JTAG module<br>**OK to use** if not used by external JTAG module   |
+| 16  |      D15      |      IO15      |     15     |      MTD0      |       MTD0       | Strapping GPIO (U0TXD print ctrl, SDIO slave timing)<br>JTAG<br>Capacitive-sensing<br>Analog-enabled<br>**NOTE:** No built-in JTAG module |
+| 17  |      RX2      |      IO16      |     16     |     GPIO16     |      GPIO16      |                                       No in-package flash/PSRAM, no WROOM-32 PSRAM<br>**OK to use**                                       |
+| 18  |      TX2      |      IO17      |     17     |     GPIO17     |      GPIO17      |                                          No in-package flash, no WROOM-32 PSRAM<br>**OK to use**                                          |
+| 19  |      D18      |      IO18      |     18     |     GPIO18     |      GPIO18      |                                                                                                                                           |
+| 20  |      D19      |      IO19      |     19     |     GPIO19     |      GPIO19      |                                                                                                                                           |
+| 21  |      D21      |      IO21      |     21     |     GPIO21     |      GPIO21      |                                                                                                                                           |
+| 22  |      D22      |      IO22      |     22     |     GPIO22     |      GPIO22      |                                                                                                                                           |
+| 23  |      D23      |      IO23      |     23     |     GPIO23     |      GPIO23      |                                                                                                                                           |
+| 24  |      D25      |      IO25      |     25     |     GPIO25     |      GPIO25      |                                                        Analog-enabled (ADC or DAC)                                                        |
+| 25  |      D26      |      IO26      |     26     |     GPIO26     |      GPIO26      |                                                        Analog-enabled (ADC or DAC)                                                        |
+| 26  |      D27      |      IO27      |     27     |     GPIO27     |      GPIO27      |                                                   Capacitive-sensing<br>Analog-enabled                                                    |
+| 27  |      D32      |      IO32      |     32     |     32K_XP     |      GPIO32      |                                                   Capacitive-sensing<br>Analog-enabled                                                    |
+| 28  |      D33      |      IO33      |     33     |     32K_XN     |      GPIO33      |                                                   Capacitive-sensing<br>Analog-enabled                                                    |
+| 29  |      D34      |      IO34      |     34     |     VDET_1     |      GPIO34      |                                                       Input only<br>Analog-enabled                                                        |
+| 30  |      D35      |      IO35      |     35     |     VDET_2     |      GPIO35      |                                                       Input only<br>Analog-enabled                                                        |
+| 31  |      VP       |   SENSOR_VP    |     36     |   SENSOR_VP    |      GPIO36      |                                                       Input only<br>Analog-enabled                                                        |
+| 32  |      NC       |       NC       |     37     |  SENSOR_CAPP   |      GPIO37      |                                                       Input only<br>Analog-enabled                                                        |
+| 33  |      NC       |       NC       |     38     |  SENSOR_CAPN   |      GPIO38      |                                                       Input only<br>Analog-enabled                                                        |
+| 34  |      VN       |   SENSOR_VN    |     39     |   SENSOR_VN    |      GPIO39      |                                                       Input only<br>Analog-enabled                                                        |
 
 ### 10 Sep 2025
 - Working issue #3: Assemble components on breadboard
@@ -234,4 +234,41 @@
 	- Green: 2.2 V
 	- Blue 3 V
 - I didn't try yellow, but it's between red and green so I'll assume 2.0 V
+### 22 Sep 2025
 
+#### LED Forward Voltages
+
+| Color      | Forward Voltage (V) |
+| ---------- | ------------------- |
+| Red        | 1.8                 |
+| Yellow     | 2.0                 |
+| Green      | 2.2                 |
+| Blue/White | 3.0                 |
+- Re-reading the datasheet and TRM sections on GPIO
+- PSRAM - Pseudo-Static RAM
+	- Offers the high density of DRAM with the ease-of-use of SRAM
+	- Internally PSRAM is DRAM. It uses dynamic memory cells that require periodic refreshing.
+	- Externally PSRAM is SRAM-like. It includes a built-in refresh controller, so to the microcontroller, it behaves like SRAM -- no refresh management needed.
+- ESP32-D0WDQ6
+	- D: Dual core
+	- 0: No in-package flash
+	- WD: Wi-Fi b/g/n + Bluetooth/Bluetooth LE dual mode
+	- Q6: QFN 6\*6 (6 mm x 6 mm)
+	- No in-package PSRAM
+	- Not rated for high temperature
+	- Based on chip revision v1 or v1.1
+- Pins SCK/CLK, SDO/SD0, SDI/SD1, SHD/SD2, SWP/SD3 and SCS/CMD, namely, GPIO6 to GPIO11 on the ESP32-D0WDQ6 chip, are connected to the SPI flash integrated on the ESP32-WROOM-32 module and are not recommended for other uses (pg. 10 of ESP32-WROOM-32 datasheet)
+- **NOTE:** Ensure the pin chosen to connect the LED to has a default function (function 0) that's not GPIO. This ensures we must change its function to be GPIO.
+- Configure the ESP32 chip to be in modem-sleep mode (Wifi/Bluetooth radio disabled)
+- **TODO:** Update the GPIO pin table with a comment indicating which pins are analog-enabled (18) / capacitive-touch-enabled (10)
+- When choosing a GPIO pin to connect the LED to, be sure to look at the "Drive Strength" column in the IO_MUX table. This value is configurable.
+	- Default is 20 mA
+	- 10 mA should work as I only plan on driving 5 mA out the pin. So configure the GPIO pin for 10 mA drive strength.
+- When choosing a GPIO pin to connect the LED to, be sure to look at the "After Reset" column in the IO_MUX table
+	- OE (output enable) = 0 for all GPIO pins after reset
+- GPIO pins to connect LED to:
+	- Start with all output pins that aren't used for some special purpose:
+		- 4, 13, 14, 16, 17, 18, 19, 21 - 23, 25 - 27, 32, 33
+	- Narrow this down to a pin whose default function is not GPIO:
+		- 13, 14
+	- Choosing GPIO13!

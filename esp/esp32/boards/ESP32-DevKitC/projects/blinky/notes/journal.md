@@ -272,3 +272,8 @@
 	- Narrow this down to a pin whose default function is not GPIO:
 		- 13, 14
 	- Choosing GPIO13!
+### 23 Sep 2025
+- The circuit is now fully assembled. I did settle on a forward voltage of 2.2 V for  The green/gray wires attached to the green/white clips go to my multimeter so I can measure the current through the circuit when the LED is on.
+	- ![450](attachments/IMG_2506.jpeg)
+	- ![450](attachments/IMG_2507.jpeg)
+	- ![450](attachments/IMG_2509.jpeg)

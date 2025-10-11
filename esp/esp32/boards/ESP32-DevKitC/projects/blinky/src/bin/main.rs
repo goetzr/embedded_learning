@@ -23,11 +23,11 @@ fn main() -> ! {
     let peripherals = esp_hal::init(config);
 
     // Configure GPIO13 as the output pin.
-    let output_cfg = OutputConfig::default()
+    let out_pin_cfg = OutputConfig::default()
         .with_drive_mode(DriveMode::PushPull)
         .with_pull(Pull::None)
         .with_drive_strength(DriveStrength::_10mA);
-    let mut led = Output::new(peripherals.GPIO13, Level::Low, output_cfg);
+    let _led = Output::new(peripherals.GPIO13, Level::Low, out_pin_cfg);
 
     loop {
         info!("Hello world!");

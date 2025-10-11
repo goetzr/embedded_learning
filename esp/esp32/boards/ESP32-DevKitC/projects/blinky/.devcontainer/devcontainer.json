@@ -1,0 +1,20 @@
+    {
+      "name": "ESP-IDF Rust Development",
+      "image": "espressif/idf-rust:esp_latest",
+      "mounts": [
+        {
+          "type": "volume",
+          "source": "esp32_cargo_cache",
+          "target": "/home/esp/.cargo"
+        }
+      ],
+      "customizations": {
+        "vscode": {
+          "extensions": [
+            "espressif.esp-idf-extension",
+            "rust-lang.rust-analyzer"
+          ]
+        }
+      },
+      "remoteUser": "esp"
+    }

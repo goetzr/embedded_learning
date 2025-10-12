@@ -1,4 +1,5 @@
-target/
-build/
-Cargo.lock
-/**/link.map
+.vscode/
+.zed/
+
+# macOS
+.DS_Store

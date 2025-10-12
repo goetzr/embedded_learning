@@ -1,11 +1,16 @@
     {
       "name": "ESP-IDF Rust Development",
-      "image": "espressif/idf-rust:esp_latest",
+      "image": "espressif/idf-rust:esp32_latest",
       "mounts": [
         {
           "type": "volume",
           "source": "esp32_cargo_cache",
           "target": "/home/esp/.cargo"
+        },
+        {
+          "type": "bind",
+          "source": "/Users/rgoetz/.ssh",
+          "target": "/home/esp/.ssh"
         }
       ],
       "customizations": {

@@ -7,6 +7,10 @@ version      = "0.1.0"
 [[bin]]
 name = "blinky"
 path = "./src/bin/main.rs"
+# RSG: A known issue for esp-idf users is that rust-analyzer's cargo test harness can cause build script panics,
+#      leading to a broken LSP.
+#      If you are using esp-idf, you may need to disable the built-in test harness for your bin target.
+harness = false
 
 [dependencies]
 defmt                  = "1.0.1"

@@ -27,12 +27,12 @@ fn main() -> ! {
         .with_drive_mode(DriveMode::PushPull)
         .with_pull(Pull::None)
         .with_drive_strength(DriveStrength::_10mA);
-    let _led = Output::new(peripherals.GPIO13, Level::Low, out_pin_cfg);
+    let _led = Output::new(peripherals.GPIO13, Level::High, out_pin_cfg);
 
     loop {
         info!("Hello world!");
         let delay_start = Instant::now();
-        while delay_start.elapsed() < Duration::from_millis(500) {}
+        while delay_start.elapsed() < Duration::from_millis(1000) {}
     }
 
     // for inspiration have a look at the examples at https://github.com/esp-rs/esp-hal/tree/esp-hal-v1.0.0-rc.0/examples/src/bin

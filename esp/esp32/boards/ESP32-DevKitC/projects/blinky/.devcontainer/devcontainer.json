@@ -16,8 +16,8 @@
       "customizations": {
         "vscode": {
           "extensions": [
-            "espressif.esp-idf-extension",
-            "rust-lang.rust-analyzer"
+            "rust-lang.rust-analyzer",
+            "tamasfe.even-better-toml"
           ]
         }
       },

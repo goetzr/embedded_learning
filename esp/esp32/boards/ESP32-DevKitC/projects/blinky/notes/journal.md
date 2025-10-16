@@ -277,3 +277,18 @@
 	- ![450](attachments/IMG_2506.jpeg)
 	- ![450](attachments/IMG_2507.jpeg)
 	- ![450](attachments/IMG_2509.jpeg)
+
+### 16 Oct 2025
+* Wrote the program to light the LED. It works! I had several issues along the way though.
+* Issue #1: Containerization
+	* Instead of installing the custom xtensa rust toolchain and the associated esp-rs tools on my macbook, espressif provides a container image that can be built for each ESP chip with all the required tools installed. I used the espressif/idf-rust:esp32_latest image.
+	* Initially my troubles stemmed from me never having worked with containers before. Each time I built the project it used a fresh container, forcing it to re-download the dependencies. To avoid this unnecessary slowdown, I figured out how to mount a Docker volume to the /home/esp/.cargo folder to cache the downloaded dependencies. Now after the first build the dependencies were not re-downloaded; the cached versions were used. The dependencies still have to be recompiled with each change to my program. This is true with or without a container. My program code along with the code for each dependency is compiled together into a single binary. It's just not possible to build the dependencies once then re-use those binaries when using rust.
+	* I was using Zed as my editor at first. I noticed that my intellisense wasn't working though. This was because rust analyzer (RA) was running on my host, which didn't have the xtensa rust toolchain installed, preventing RA from being able to build the code. This prompted me to switch to using VS code along with its dev containers extension. This installs a VS code server along with any desired extensions (including RA) inside the container. Because RA was now installed inside the container where the xtensa rust toolchain was installed, intellisense started working.
+		* **NOTE:** As discussed below I stopped using the container and installed the xtensa rust toolchain and associated tools on my host, so I could go back to using Zed if I wanted. But I think I'm going to stick with VS code for now. It works well for me.
+	* The final issue I had with the container, which forced me to stop using the container altogether, was that the container couldn't access the virtual serial port created when I plugged my board into my macbook. This meant I couldn't flash my program onto the chip, which is obviously not going to work. macOS can't run containers directly. It uses a small Linux VM to run the containers. macOS security policy doesn't allow this Linux VM to access physical devices plugged into the macbook. There's nothing I could do. I had to drop the container and install the xtensa rust toolchain and associated tools directly on my macbook.
+* Issue #2: Rust Analyzer
+	* Rust analyzer (RA) worked fine except for one small part that really bugged me. I noticed that RA was showing the return type of the esp_hal::init function as {unknown}. I looked at this **way** longer than I should have. RA was working fine for the rest of the program. I spent 2 or 3 days researching this and trying various VS code settings for the RA extension. Nothing fixed it. The esp_hal::init function returns a Peripheral structure. The definition of this structure in the esp_hal crate source code is passed to a procedural macro. Oddly enough, the program built fine. So cargo obviously recognized the Peripheral structure without issue. I learned that RA doesn't use cargo's macro facilities; it implements this on its own. My only explanation is that RA's macro facilities are unable to handle the macros involved in defining the Peripheral structure.
+	![450](attachments/IMG_2541.jpeg)
+	![450](attachments/IMG_2542.jpeg)
+	![450](attachments/IMG_2543.jpeg)
+	![450](attachments/IMG_2544.jpeg)

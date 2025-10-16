@@ -27,10 +27,11 @@ fn main() -> ! {
         .with_drive_mode(DriveMode::PushPull)
         .with_pull(Pull::None)
         .with_drive_strength(DriveStrength::_10mA);
+    // Initialize the pin to high.
     let _led = Output::new(peripherals.GPIO13, Level::High, out_pin_cfg);
 
     loop {
-        info!("Hello world!");
+        info!("Light LED test");
         let delay_start = Instant::now();
         while delay_start.elapsed() < Duration::from_millis(1000) {}
     }

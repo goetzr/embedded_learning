@@ -292,3 +292,60 @@
 	![450](attachments/IMG_2542.jpeg)
 	![450](attachments/IMG_2543.jpeg)
 	![450](attachments/IMG_2544.jpeg)
+### 17 Oct 2025
+- Fixed issue #5. The LED is now on for 1 second then off for 1 second (0.5 Hz). This was simple to write because the esp_hal crate provides the time::Instant structure and the time::Duration structure.
+- Fixed issue #6. The fix for issue #5 is also being used for issue #6. See the comments on issue #5.
+- Working on issue #7
+- Pulled down the no_std-training git repo from the [embedded Rust (no std) training](https://docs.espressif.com/projects/rust/no_std-training/) with the following command:
+	- git clone "https://github.com/esp-rs/no_std-training.git"
+- Looked at the button-interrupt example project at intro/button-interrupt
+- Learned that I need to annotate an interrupt handler with the esp_hal::handler attribute
+- I know I want to use one of the general purpose timer peripherals to generate an interrupt every 1 second
+- Read through the timer peripheral section in the datasheet
+- Started reading the Interrupt Matrix chapter in the TRM
+- Started reading the Timer Group (TIMG) chapter in the TRM
+	- 16-bit Prescalar
+		- Each timer uses the APB clock (APB_CLK, normally 80 MHz) as the basic clock
+		- This clock is then divided down by a 16-bit prescalar which generates the time-based counter clock (TB_clk)
+		- Every cycle of TB_clk causes the time-based counter to increment / decrement by one
+		- The timer must be disabled before before changing the prescalar
+			- Clear TIMGn_Tx_EN to disable timer x in group n
+			- Set TIMGn_Tx_DIVIDER to configure the prescalar for timer x in group n
+				- Prescalar must be in the range \[2, 65536\]
+				- When TIMGn_Tx_DIVIDER is:
+					- 1 or 2, the clock divisor is 2
+					- 0, the clock divisor is 65536
+					- any of value d, the clock divisor is d
+	- 64-bit Time-base Counter
+		- The time-base can be configured to count either up or down
+			- Set TIMGn_Tx_DIVIDER: count up
+			- Clear TIMGn_Tx_DIVIDER: count down
+		- Counting can be enabled or disabled
+			- Clear TIMGn_Tx_EN: stop counting. This freezes the counter, retaining its value
+			- Set TIMGn_Tx_EN: resume counting
+		- Set new counter value by setting registers TIMGn_Tx_LOAD_LO and TIMGn_Tx_LOAD_HI to the desired value
+			- Hardware will ignore these register settings until a reload. A reload causes the contents of these registers to be copied to the counter itself.
+			- A reload can be triggered by:
+				- An alarm (auto-reload at alarm)
+					- Set TIMGn_Tx_AUTORELOAD register to enable auto-reload at alarm
+				- Software (software instant reload)
+					- Write any value to TIMGn_Tx_LOAD_REG register to trigger a software instant reload
+					- This will cause the counter value to be changed instantly
+		- Software can change the direction of the time-base counter by changing the value of TIMGn_Tx_INCREASE
+		- Writing any value to TIMGn_TxUPDATE_REG latches the time-base counter value into the TIMGn_TxLO_REG and TIMGn_TxHI_REG registers to be read by software at any point in time
+	- Alarm Generation
+		- A triggered alarm can cause a reload and/or an interrupt to occur
+		- Alarm is triggered when the alarm registers TIMGn_Tx_ALARMLO_REG and TIMGn_Tx_ALARMHI_REG match the current timer value
+		- Alarm also triggers when:
+			- Current timer value is higher than the current alarm value (up-counting timer)
+			- Current timer value is lower than the current alarm value (down-counting timer)
+		- The timer alarm enable bit is automatically cleared once an alarm occurs
+	- Interrupts
+		- TIMGn_INT_T0_INT: An alarm event on timer 0 generates this interrupt
+### 18 Oct 2025
+- Learning how to use the esp_hal crate to configure and start a timer
+	- The General-purpose Timer example in the esp_hal documentation for the esp_hal::timer::timg module clearly shows a call to timer0.start. However, the esp_hal::timer::timg::Timer structure doesn't directly define a start method. I found in the esp_hal source code that the start method is defined in the esp_hal::timer::Timer trait. However, the docs for this trait don't show the start method. Looking at the esp_hal source I see that the start method (and many other methods) are marked with the doc(hidden) attribute. Why would they hide the start method?
+		- Turns out that the esp_hal::timer::Timer trait is a low level trait. Its use by developer is discouraged. Instead developers are encouraged to use higher level abstractions like esp_hal::timer::OneShotTimer and esp_hal::timer::PeriodicTimer. These structures provide their own start method directly.
+	- The esp_hal crate has abstracted away all the low-level details, providing the PeriodicTimer structure
+		- Call enable_interrupt(true)
+		- Call set_interrupt_handler
